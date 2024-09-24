@@ -53,7 +53,6 @@ fun showPostList() {
     LaunchedEffect(Unit) {
         posts =ApiClient.getPost()
     }
-
     Column {
         LazyColumn {
             items(posts){post->
@@ -73,8 +72,8 @@ fun PostListItemview(post: Feed) {
 
     Card (Modifier.fillMaxWidth().padding(16.dp)){
         Column {
-            Text(text = post.title, style = TextStyle(fontSize = 20.sp))
-            Text(text = post.body)
+            Text(text = post.title, style = TextStyle(fontSize = 20.sp), modifier = Modifier.padding(16.dp))
+            Text(text = post.body, style = TextStyle(fontSize = 16.sp), modifier = Modifier.padding(16.dp))
         }
     }
 }
